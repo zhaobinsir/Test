@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <!-- A dark gray, equivalent to 0xffaaaaaa -->
+    <color name="darker_gray">#aaa</color>
+
+    <color name="test">#aaa</color>
+</resources>

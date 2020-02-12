@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/qb_px_300"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/dialog_bg_top">
+
+
+        <!--日期展示-->
+        <TextView
+            android:id="@+id/timeshow_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="2dp"
+            android:padding="8dp"
+            android:text="2020年1月20日"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/week_tv"
+            android:layout_toRightOf="@+id/timeshow_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="17dp"
+            android:text="周五"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/changelauar_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="17dp"
+            android:padding="8dp"
+            android:text="产看农历"
+            android:textColor="#498BFD"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#DDDDDD" />
+    </RelativeLayout>
+
+
+    <!--此部分需要完整复制过去，删减或者更改ID会导致初始化找不到内容而报空-->
+    <LinearLayout
+        android:id="@+id/timepicker"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:minHeight="150dp"
+        android:orientation="horizontal">
+
+        <com.contrarywind.view.WheelView
+            android:id="@+id/year"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <com.contrarywind.view.WheelView
+
+            android:id="@+id/month"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.1" />
+
+        <com.contrarywind.view.WheelView
+            android:id="@+id/day"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.1" />
+
+        <com.contrarywind.view.WheelView
+            android:id="@+id/hour"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.1" />
+
+        <com.contrarywind.view.WheelView
+            android:id="@+id/min"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.1" />
+
+        <com.contrarywind.view.WheelView
+            android:id="@+id/second"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.1" />
+    </LinearLayout>
+    <!--顶部按钮-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/dialog_bg_bom"
+        android:layout_height="50dp">
+
+        <View
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#DDDDDD" />
+
+        <TextView
+            android:id="@+id/cancel_tv"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/viewline"
+            android:layout_centerVertical="true"
+            android:padding="8dp"
+            android:text="取消"
+            android:textColor="#444444"
+            android:textSize="18sp" />
+
+        <View
+            android:id="@+id/viewline"
+            android:layout_centerInParent="true"
+            android:background="#DDDDDD"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/confirm_tv"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/viewline"
+            android:layout_centerVertical="true"
+            android:padding="8dp"
+            android:text="确定"
+            android:textColor="#498BFD"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

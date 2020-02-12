@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#498BFD">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/back_img"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/back" />
+
+            <LinearLayout
+                android:id="@+id/calendarTitle_ln"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:text="2020-2-6"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/status_img"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/down" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </android.widget.Toolbar>
+
+    <com.necer.view.WeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="#666666" />
+
+
+    <com.necer.calendar.Miui10Calendar
+        android:id="@+id/miui10Calendar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:holidayColor="#519EDC"
+        app:isShowNumberBackground="true"
+        app:lunarHolidayTextColor="#519EDC"
+        app:numberBackgroundAlphaColor="50"
+        app:numberBackgroundTextColor="#398FE9"
+        app:numberBackgroundTextSize="250sp"
+        app:pointLocation="down"
+        app:hollowCircleColor="#FFED0F0F"
+        app:selectCircleColor="#398FE9"
+        app:selectLunarTextColor="#FFED0F0F"
+        app:selectSolarTextColorColor="#FFED0F0F"
+        app:solarHolidayTextColor="#519EDC"
+        app:solarTermTextColor="#519EDC"
+        app:todaySolarTextColor="#398FE9">
+
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/bg_miui10"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <TextView
+                    android:id="@+id/year_tv"
+                    style="@style/calendartitle"
+                    android:text="2019年10月1日"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/year_tv"
+                    android:textColor="#FFED0F0F"
+                    style="@style/calendartitle"
+                    android:id="@+id/lunar_tv"
+                    android:text="九月初七"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_alignBaseline="@+id/lunar_tv"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/lunar_tv"
+                    style="@style/calendarinfoTv"
+                    android:id="@+id/dimdd_tv"
+                    android:text="3天后"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!--以上为标题-->
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/year_tv"
+                    android:id="@+id/oldtext_tv"
+                    style="@style/calendarconTv"
+                    android:text="庚子年 戊寅月 癸未日 第三周 周一"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!--以上时老农历信息-->
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/wx_tv"
+                    android:layout_below="@+id/oldtext_tv"
+                    android:text="五行"
+                    style="@style/boldtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/wxinfo_tv"
+                    android:layout_toRightOf="@+id/wx_tv"
+                    android:layout_marginLeft="10dp"
+                    android:layout_alignBaseline="@+id/wx_tv"
+                    android:text="杨柳木"
+                    style="@style/calendarinfoTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!--以上五行-->
+
+                <TextView
+                    android:layout_below="@+id/wx_tv"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/cs_tv"
+                    android:text="冲煞"
+                    style="@style/boldtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/cs_tv"
+                    android:layout_alignBaseline="@+id/cs_tv"
+                    style="@style/calendarinfoTv"
+                    android:id="@+id/csinfo_tv"
+                    android:text="冲（丁丑）牛 煞西"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!--以上为冲煞-->
+
+
+                <TextView
+                    android:layout_below="@+id/cs_tv"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/pz_tv"
+                    android:text="彭祖"
+                    style="@style/boldtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/pz_tv"
+                    android:layout_alignBaseline="@+id/pz_tv"
+                    style="@style/calendarinfoTv"
+                    android:id="@+id/pzinfo_tv"
+                    android:text="玉堂执日"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!--彭祖以上-->
+                <TextView
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/pz_tv"
+                    style="@style/calendartitle"
+                    android:background="@drawable/yibg"
+                    android:text="宜"
+                    android:textColor="#ffffff"
+                    android:id="@+id/yi_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    style="@style/calendarconTv"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/yi_tv"
+                    android:layout_alignBaseline="@+id/yi_tv"
+                    android:id="@+id/yiinfo_tv"
+                    android:text="祭祀,会亲友 开工 安床 启钻 安葬 开张 开业 开市"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/yi_tv"
+                    style="@style/calendartitle"
+                    android:background="@drawable/jibg"
+                    android:text="忌"
+                    android:textColor="#ffffff"
+                    android:id="@+id/ji_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/calendarconTv"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/ji_tv"
+                    android:layout_alignBaseline="@+id/ji_tv"
+                    android:id="@+id/jiinfo_tv"
+                    android:text="结婚 动土 破土 嫁娶"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <!--以上宜忌-->
+                <TextView
+                    android:layout_below="@+id/jiinfo_tv"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/js_tv"
+                    android:text="吉神"
+                    style="@style/boldtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/js_tv"
+                    android:layout_alignBaseline="@+id/js_tv"
+                    style="@style/calendarinfoTv"
+                    android:id="@+id/jsinfo_tv"
+                    android:text="时德 民日 天巫 福德 鸣犬"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <!--吉神以上-->
+                <TextView
+                    android:layout_below="@+id/jsinfo_tv"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/xs_tv"
+                    android:text="凶神"
+                    style="@style/boldtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/xs_tv"
+                    android:layout_alignBaseline="@+id/xs_tv"
+                    style="@style/calendarinfoTv"
+                    android:id="@+id/xsinfo_tv"
+                    android:text="灾煞 天火 大煞 天刑"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <!--凶神以上-->
+
+
+            </RelativeLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+    </com.necer.calendar.Miui10Calendar>
+
+</LinearLayout>
