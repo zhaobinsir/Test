@@ -229,9 +229,6 @@
                     android:layout_below="@+id/line2"
                     style="@style/calendartitle"
                     android:background="@drawable/yibg"
-                    android:singleLine="true"
-                    android:ellipsize="marquee"
-                    android:marqueeRepeatLimit="marquee_forever"
                     android:text="宜"
                     android:textColor="#ffffff"
                     android:id="@+id/yi_tv"
@@ -240,6 +237,9 @@
 
                 <TextView
                     style="@style/calendarconTv15"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@+id/yi_tv"
                     android:layout_alignBottom="@+id/yi_tv"
@@ -265,15 +265,15 @@
                     style="@style/calendartitle"
                     android:background="@drawable/jibg"
                     android:text="忌"
-                    android:singleLine="true"
-                    android:ellipsize="marquee"
-                    android:marqueeRepeatLimit="marquee_forever"
                     android:textColor="#ffffff"
                     android:id="@+id/ji_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
                     style="@style/calendarconTv15"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@+id/ji_tv"
