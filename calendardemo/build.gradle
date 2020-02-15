@@ -3,7 +3,7 @@ android {
     compileSdkVersion 28
 
     defaultConfig {
-        applicationId "demo.shizhi.com.calendardemo"
+        applicationId "com.phonefangdajing.word"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
@@ -69,10 +69,19 @@ dependencies {
     implementation 'com.dotc.sdk.third:livenessdetectorsdk:1.5.1'
     implementation 'com.dotc.sdk.third:livenesscamera:1.5.1'
 
+    //alipay
+    implementation 'com.dotc.sdk.third:alipaysdk:15.6.4'
+
     implementation 'com.github.lzyzsd:jsbridge:1.0.4'
 
     implementation ('com.dotc.sdk:adsdk-lite-cn:1.0.2.0108.4534') {
         exclude module: 'libAvid-mopub' // To exclude AVID
         exclude module: 'moat-mobile-app-kit' // To exclude Moat
     }
+
+   //一下是重复sdk 上报 正式接入删除即可
+    implementation 'com.dotc.sdk:analytics-lite-cn:1.0.3.0619'
+//    //广告
+//    implementation 'com.dotc.sdk:adsdk-lite-cn:1.0.2.0108.4534'
+
 }

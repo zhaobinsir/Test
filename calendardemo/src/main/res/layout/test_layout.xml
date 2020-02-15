@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/login1bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="账号或微信登陆"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/login2bt"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="游客登陆"
+        app:layout_constraintEnd_toEndOf="@+id/login1bt"
+        app:layout_constraintHorizontal_bias="0.269"
+        app:layout_constraintStart_toStartOf="@+id/login1bt"
+        app:layout_constraintTop_toBottomOf="@+id/login1bt" />
+
+    <Button
+        android:id="@+id/taskbt"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_marginTop="16dp"
+        android:text="获取任务列表"
+        app:layout_constraintEnd_toEndOf="@+id/conphonebt"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="@+id/conphonebt"
+        app:layout_constraintTop_toBottomOf="@+id/conphonebt" />
+
+    <Button
+        android:id="@+id/qiandaobt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="签到"
+        app:layout_constraintEnd_toEndOf="@+id/taskbt"
+        app:layout_constraintStart_toStartOf="@+id/taskbt"
+        app:layout_constraintTop_toBottomOf="@+id/taskbt" />
+
+    <Button
+        android:id="@+id/addmoneybt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="增加金币"
+        app:layout_constraintEnd_toEndOf="@+id/qiandaobt"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/qiandaobt"
+        app:layout_constraintTop_toBottomOf="@+id/qiandaobt" />
+
+    <Button
+        android:id="@+id/moneynumbt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="获取金币"
+        app:layout_constraintEnd_toEndOf="@+id/addmoneybt"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/addmoneybt"
+        app:layout_constraintTop_toBottomOf="@+id/addmoneybt" />
+
+    <Button
+        android:id="@+id/tixianbt"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="8dp"
+        android:text="提现"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/moneynumbt"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/moneynumbt"
+        app:layout_constraintTop_toBottomOf="@+id/moneynumbt"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/conphonebt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="游客登陆绑定手机号"
+        app:layout_constraintEnd_toEndOf="@+id/login2bt"
+        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintStart_toStartOf="@+id/login2bt"
+        app:layout_constraintTop_toBottomOf="@+id/login2bt" />
+
+</android.support.constraint.ConstraintLayout>
