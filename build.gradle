@@ -21,8 +21,18 @@ allprojects {
         google()
         jcenter()
         mavenCentral()
-        maven { url 'https://jitpack.io' }
         maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local/' }
+        maven {
+            url 'http://172.31.3.249:9090/repository/dotc-common/'
+        }
+
+        maven {
+            url 'http://172.31.3.249:9090/repository/maven-snapshots/'
+        }
+
+        maven { url "https://jitpack.io" }
+
+        maven { url "https://raw.githubusercontent.com/tuia-fed/tuia-native-androidSdk/master" }
     }
 }
 

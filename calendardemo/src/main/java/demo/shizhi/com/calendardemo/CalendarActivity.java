@@ -37,6 +37,8 @@ import demo.shizhi.com.calendardemo.block.entity.HolidayJson;
 import demo.shizhi.com.calendardemo.block.HolldayUtils;
 import demo.shizhi.com.calendardemo.block.WeekUtils;
 import demo.shizhi.com.calendardemo.block.entity.LunarEntity;
+import demo.shizhi.com.calendardemo.db.HuangLi;
+import demo.shizhi.com.calendardemo.utils.DbHelper;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
@@ -66,8 +68,12 @@ public class CalendarActivity extends AppCompatActivity implements Callback {
     //返回按钮 及标题按钮
     private ImageView backImag, statuimg;
 
+    //网络查询反馈码
     public static final int SUCCESS = 0;
     public static final int ERROR = 1;
+    //数据库查询反馈吗
+    public static final int DB_SUCCESS = 2;
+    public static final int DB_ERROR = 3;
 
 
     @Override
@@ -149,7 +155,14 @@ public class CalendarActivity extends AppCompatActivity implements Callback {
                 oldlunarCon = WeekUtils.getWeekNum(time) + " " + WeekUtils.getWeek(localDate.toDate());
                 oldlunarTv.setText(oldlunarCon);
                 //发起网络请求
-                HttpUtils.getInstance().getDataAsync(time,CalendarActivity.this);
+//              HttpUtils.getInstance().getDataAsync(time,CalendarActivity.this);
+                //本地数据库查询需要的年份
+                String dbtime = localDate.toString("yyyy-MM-dd 00:00:00");
+                //转为db数据库处理
+                HuangLi huangLi=DbHelper.getHuangLi(this,dbtime);
+                if (huangLi!=null)
+                    sendMsg(DB_SUCCESS,huangLi);
+                else sendMsg(DB_ERROR,null);
                 Log.d(TAG, "onCalendarChange: " + localDate.toString("yyyy年MM月dd日"));
                 Log.d(TAG, "onCalendarChange: " + lunar.chineseEra + lunar.animals + "年" + lunar.lunarMonthStr + lunar.lunarDayStr);
             }
@@ -276,6 +289,7 @@ public class CalendarActivity extends AppCompatActivity implements Callback {
                     //老农历信息
                     String oldCon=getStringByList(hl.getSuici())+"\r"+oldlunarCon;
                     oldlunarTv.setText(oldCon);
+
                     wxTv.setText(hl.getWuxing());//五行
                     csTv.setText(hl.getChong() + hl.getSha());//冲煞
                     pzTv.setText(hl.getTaishen());//彭祖
@@ -292,6 +306,32 @@ public class CalendarActivity extends AppCompatActivity implements Callback {
                     break;
                 case ERROR://异常
                     Toast.makeText(CalendarActivity.this, (String) msg.obj, Toast.LENGTH_SHORT).show();
+                    break;
+                    //Db 查询可以直接更新UI 没必要放到此处写，懒得省事
+                case DB_SUCCESS:
+                    HuangLi huangLi= (HuangLi) msg.obj;
+                    //老农历信息
+                    String oldhl=huangLi.tiangandizhiyear+"年 "+huangLi.tiangandizhimonth+"月 "+huangLi.tiangandizhiday+"日 "
+                            +"\r"+oldlunarCon;
+                    oldlunarTv.setText(oldhl);
+                    //五行
+                    wxTv.setText(huangLi.wuxingjiazi+" "+huangLi.wuxingnayear+" "+huangLi.wuxingnamonth);
+                    //冲煞
+                    csTv.setText(huangLi.chongsha);
+                    //彭祖
+                    pzTv.setText(huangLi.pengzu);
+                    //宜
+                    yiTv.setText(huangLi.fitness);
+                    //忌
+                    jiTv.setText(huangLi.taboo);
+                    //吉神
+                    jsTv.setText(huangLi.shenwei);
+                    //凶神
+                    xsTv.setText(huangLi.xingsu);
+                    break;
+                case DB_ERROR:
+                    //暂不处理
+                    Log.d(TAG, "handleMessage: huangLi==null 未查到数据或手机读取写权限未开启");
                     break;
             }
         }
