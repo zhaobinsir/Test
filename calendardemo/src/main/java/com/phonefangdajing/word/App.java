@@ -1,4 +1,4 @@
-package demo.shizhi.com.calendardemo;
+package com.phonefangdajing.word;
 
 import android.app.Application;
 
@@ -18,21 +18,21 @@ public class App extends Application {
 
         TaskViewConfig taskViewConfig = new TaskViewConfig.Builder()
                 .setCompleteDrawable(R.drawable.tinysdk_task_test) //设置任务完成状态样式 必须 （可以参考文件样式 tinysdk_task_complete.xml ）
-                .setNotCompleteDrawable(R.drawable.tinysdk_task_test)//设置任务未完成状态样式  必须
-                .setAcquireDrawable(R.drawable.tinysdk_task_test)//设置任务领取状态样式 必须
-                .setNotificationDrawable(R.drawable.tinysdk_task_test)//设置通知的按钮的样式  必须
+                .setNotCompleteDrawable(R.drawable.tinysdk_task_comples)//设置任务未完成状态样式  必须
+                .setAcquireDrawable(R.drawable.tinysdk_task_acquires)//设置任务领取状态样式 必须
+                .setNotificationDrawable(R.drawable.tinysdk_task_noti)//设置通知的按钮的样式  必须
                 .setTaskItemTitleColor(R.color.colorPrimary) //必须
-                .setTaskItemContentColor(R.color.colorPrimary)//必须
-                .setTaskItemDividerColor(R.color.colorPrimary)//必须
-                .setTaskItemCoinColor(R.color.colorPrimary)//必须
+                .setTaskItemContentColor(R.color.color_2f2f2f)//必须
+                .setTaskItemDividerColor(R.color.color_B3FEEFD2)//必须
+                .setTaskItemCoinColor(R.color.color_F5F5F5)//必须
                 .setDownTime(false)//时段奖励功能
                 .setProgressVisibility(false)//每日任务的进度条
                 .setGuideTaskVisibility(true)//新手任务
-                .setTipVisibility(false)//任务的提示icon
-                .setSignVisibility(false)//签到
+                .setTipVisibility(true)//任务的提示icon
+                .setSignVisibility(true)//签到
                 .setFunVisibility(true)//轻松一刻
                 .setBannerVisibility(false)//banner
-                .setCardAdVisibility(true)//5个活动擦片
+                .setCardAdVisibility(false)//5个活动擦片
                 .build();
 
         //日常任务显示步数后面 （200 / 30000）
@@ -50,7 +50,7 @@ public class App extends Application {
                 .setPubIv("")//非必传 ----------
 //                .setChannel("111")//非必传 渠道名称(接入区分分渠道功能需必传)
                 .setCashOpen(true)//非必传提现功能开关
-//                .setSignKey("1") //非必传 签到key
+                .setSignKey("1") //非必传 签到key
                 .setProgressKey("100001")  //非必传 使用进度条则必传
 //                .setStepTaskInfo(stepTaskInfo)//非必传，计步器专属
                 .setAutoSign(true)//非必传 设置是否自动签到，默认不自动签到

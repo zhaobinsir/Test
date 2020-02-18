@@ -1,4 +1,4 @@
-package demo.shizhi.com.calendardemo.db;
+package com.phonefangdajing.word.db;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.RoomDatabase;

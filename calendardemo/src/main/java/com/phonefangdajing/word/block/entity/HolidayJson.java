@@ -1,4 +1,4 @@
-package demo.shizhi.com.calendardemo.block.entity;
+package com.phonefangdajing.word.block.entity;
 
 import java.util.List;
 

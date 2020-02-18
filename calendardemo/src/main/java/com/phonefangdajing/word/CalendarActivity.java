@@ -1,4 +1,4 @@
-package demo.shizhi.com.calendardemo;
+package com.phonefangdajing.word;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
@@ -13,10 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bigkoo.pickerview.builder.TimePickerBuilder;
-import com.bigkoo.pickerview.listener.OnDismissListener;
 import com.bigkoo.pickerview.view.TimePickerView;
 import com.google.gson.Gson;
-import com.google.gson.JsonSyntaxException;
 import com.necer.calendar.Miui10Calendar;
 import com.necer.entity.CalendarDate;
 import com.necer.entity.Lunar;
@@ -32,13 +30,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import demo.shizhi.com.calendardemo.block.HttpUtils;
-import demo.shizhi.com.calendardemo.block.entity.HolidayJson;
-import demo.shizhi.com.calendardemo.block.HolldayUtils;
-import demo.shizhi.com.calendardemo.block.WeekUtils;
-import demo.shizhi.com.calendardemo.block.entity.LunarEntity;
-import demo.shizhi.com.calendardemo.db.HuangLi;
-import demo.shizhi.com.calendardemo.utils.DbHelper;
+import com.phonefangdajing.word.block.HolldayUtils;
+import com.phonefangdajing.word.block.WeekUtils;
+import com.phonefangdajing.word.block.entity.HolidayJson;
+import com.phonefangdajing.word.block.entity.LunarEntity;
+import com.phonefangdajing.word.db.HuangLi;
+import com.phonefangdajing.word.utils.DbHelper;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;

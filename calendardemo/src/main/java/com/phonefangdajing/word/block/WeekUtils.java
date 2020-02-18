@@ -1,13 +1,9 @@
-package demo.shizhi.com.calendardemo.block;
-
-import android.util.Log;
+package com.phonefangdajing.word.block;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
-import java.util.TimeZone;
 
 //获得周几
 public class WeekUtils {

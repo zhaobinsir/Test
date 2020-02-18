@@ -1,30 +1,18 @@
-package demo.shizhi.com.calendardemo.block;
+package com.phonefangdajing.word.block;
 
 import android.content.Context;
 import android.content.res.Resources;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonSyntaxException;
 
-import org.apache.commons.io.FileUtils;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
 
-import demo.shizhi.com.calendardemo.R;
-import demo.shizhi.com.calendardemo.block.entity.HolidayJson;
+import com.phonefangdajing.word.R;
+import com.phonefangdajing.word.block.entity.HolidayJson;
+
 
 public class HolldayUtils {
 

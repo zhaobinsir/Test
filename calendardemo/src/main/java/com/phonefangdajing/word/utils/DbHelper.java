@@ -1,4 +1,4 @@
-package demo.shizhi.com.calendardemo.utils;
+package com.phonefangdajing.word.utils;
 
 import android.arch.persistence.db.SupportSQLiteDatabase;
 import android.arch.persistence.room.Room;
@@ -13,8 +13,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
-import demo.shizhi.com.calendardemo.db.HuangLi;
-import demo.shizhi.com.calendardemo.db.HuangLiDatabase;
+import com.phonefangdajing.word.db.HuangLi;
+import com.phonefangdajing.word.db.HuangLiDatabase;
 
 public class DbHelper {
 
