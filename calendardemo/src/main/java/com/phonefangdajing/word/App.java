@@ -19,6 +19,7 @@ public class App extends Application {
         for (int i = 0; i < 10; i++) {
             Log.d("TEST", ":test"+i);
         }
+        //测试测试测试
     }
 
     private void initsdk() {
