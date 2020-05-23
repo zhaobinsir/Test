@@ -1,6 +1,7 @@
 package com.phonefangdajing.word;
 
 import android.app.Application;
+import android.util.Log;
 
 import com.android.tiny.TinySdk;
 import com.android.tiny.bean.TaskViewConfig;
@@ -14,6 +15,10 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         initsdk();
+        //此处为测试github 废代码
+        for (int i = 0; i < 10; i++) {
+            Log.d("TEST", ":test"+i);
+        }
     }
 
     private void initsdk() {
