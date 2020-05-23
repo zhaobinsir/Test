@@ -8,6 +8,8 @@ import com.android.tiny.bean.TinyConfig;
 
 public class App extends Application {
 
+    //此处测试
+
     @Override
     public void onCreate() {
         super.onCreate();
